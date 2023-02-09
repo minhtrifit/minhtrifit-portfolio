@@ -1,0 +1,16 @@
+.content {
+    width: calc(100% - 400px);
+    min-height: 120vh;
+    margin-left: 400px;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}

@@ -3,6 +3,7 @@ import Banner from "../Home/Banner/Banner";
 import NewPost from "../Home/New Post/NewPost";
 import Blog from "../Blog/Blog";
 import Contact from "../Contact/Contact";
+import "./MyRoutes.scss";
 
 const MyRoutes = () => {
   return (
@@ -10,14 +11,28 @@ const MyRoutes = () => {
       <Route
         path="/"
         element={
-          <>
+          <div className="content">
             <Banner />
             <NewPost />
-          </>
+          </div>
         }
       />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route
+        path="/blog"
+        element={
+          <div className="content">
+            <Blog />
+          </div>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <div className="content">
+            <Contact />
+          </div>
+        }
+      />
     </Routes>
   );
 };

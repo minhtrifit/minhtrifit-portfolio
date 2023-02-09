@@ -1,21 +1,32 @@
 import { NavLink } from "react-router-dom";
 import "./Nav.scss";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { navOpen } = props;
+  const navLinkClass = ({ isActive }) => {
+    return isActive ? "nav nav-active" : "nav";
+  };
+
   return (
-    <div className="nav">
+    <div className={`nav ${navOpen ? "nav-open" : null}`}>
       <div className="nav-middle">
         <NavLink className="nav-box" to="/">
-          <i className="fa-solid fa-house"></i>
-          <p>Home</p>
+          <p className="nav-box-title">
+            <i className="fa-solid fa-house"></i>
+          </p>
+          <p className="nav-box-name">Home</p>
         </NavLink>
         <NavLink className="nav-box" to="/blog">
-          <i className="fa-solid fa-book"></i>
-          <p>Blog</p>
+          <p className="nav-box-title">
+            <i className="fa-solid fa-book nav-box-title"></i>
+          </p>
+          <p className="nav-box-name">Blog</p>
         </NavLink>
         <NavLink className="nav-box" to="/contact">
-          <i className="fa-solid fa-message"></i>
-          <p>Contact</p>
+          <p className="nav-box-title">
+            <i className="fa-solid fa-message nav-box-title"></i>
+          </p>
+          <p className="nav-box-name">Contact</p>
         </NavLink>
       </div>
     </div>

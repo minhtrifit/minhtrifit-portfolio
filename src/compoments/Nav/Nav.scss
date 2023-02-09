@@ -1,14 +1,16 @@
 .nav {
-    width: 80%;
-    height: 90%;
-    margin: 50px auto;
-    border-radius: 10px;
-    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    background-color: var(--white);
+    transition: linear 0.3s;
+    
     a {
         text-decoration: none;
         color: var(--black);
@@ -28,18 +30,29 @@
             height: 80px;
             font-size: 20px;
             font-weight: 700;
-            display: flex;
-            align-items: center;
             margin: 2px 0;
-            transition: all 0.25s linear;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
             border-radius: 10px;
+            transition: all 0.25s linear;
+            // background-color: red;
 
-            i {
-                margin-left: 50px;
+            .nav-box-title {
+                width: 100px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // background-color: red;
             }
 
-            p {
-                margin-left: 10px;
+            .nav-box-name {
+                min-width: 50px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                // background-color: blue;
             }
         }
 
@@ -53,5 +66,19 @@
             color: var(--white);
             background-color: var(--blue-dark);
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        width: 100vw;
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    .nav-open {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 1;
     }
 }
