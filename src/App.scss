@@ -5,25 +5,26 @@
 
 .app {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: var(--gray);
-  display: flex;
 
   .app-left {
     position: fixed;
-    width: 250px;
-    height: 80vh;
-    margin-left: 50px;
-    margin-top: 50px;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    display: flex;
     background-color: red;
   }
 
   .app-right {
-    width: 70vw;
-    height: 120vh;
-    margin-left: 350px;
-    margin-top: 50px;
+    width: calc(100% - 300px);
+    min-height: 120vh;
+    margin-left: 300px;
     background-color: blue;
+    display: flex;
+    justify-content: center;
   }
 }
