@@ -1,0 +1,29 @@
+:root {
+  // --gray: #F0F0F0;
+  --gray: green;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--gray);
+  display: flex;
+
+  .app-left {
+    position: fixed;
+    width: 250px;
+    height: 80vh;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: red;
+  }
+
+  .app-right {
+    width: 70vw;
+    height: 120vh;
+    margin-left: 350px;
+    margin-top: 50px;
+    background-color: blue;
+  }
+}
