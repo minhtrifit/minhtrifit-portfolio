@@ -24,7 +24,9 @@ const NewPost = (props) => {
     <div className="new-post-container">
       <div className="title">
         <i className="fa-solid fa-pen title-icon"></i>
-        <p className="title-text">NEW POST: Click blog image to see detail</p>
+        <p className="title-text">
+          NEW POST: Latest blogs released, click on the image to read
+        </p>
       </div>
       <div className="post-content">
         {listBlogContent.map((item) => {

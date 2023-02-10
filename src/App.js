@@ -11,7 +11,7 @@ function App() {
   const blogManagementLink = "./blog content/blogManagement.json";
 
   // Blog type state
-  const [initBlogList, setInitBlogList] = useState([]);
+  const [initBlogList, setInitBlogList] = useState([]); // set 1 times when loading page
   const [listBlogContent, setListBlogContent] = useState([]);
   const [blogStartList, setBlogStartList] = useState([]);
 
@@ -42,6 +42,8 @@ function App() {
           return item;
         });
 
+        const listBlogURLReverse = listBlogURL.reverse();
+
         // Init pagination count for NEW POST
         const newPostCount = Math.ceil(data.count / 3); // 3 is the number of post per page
         setNewPostPagCount(newPostCount);
@@ -55,7 +57,7 @@ function App() {
 
         // New blog list
         for (var j = 0; j < newPostCount; ++j) {
-          const res = await axios.get(listBlogURL[j]);
+          const res = await axios.get(listBlogURLReverse[j]);
           tempListContent1.push(res.data);
         }
 
@@ -103,11 +105,9 @@ function App() {
   const handleChangeNewPostPage = (e, id) => {
     // Set pagination
     setNewPostPag(id);
-
     const begin = (id - 1) * 3;
     const end = (id - 1) * 3 + 3;
     const items = initBlogList.slice(begin, end);
-    console.log(items);
     setListBlogContent(items);
   };
 
@@ -119,6 +119,7 @@ function App() {
         onClick={(e) => handleOpenNav()}
       ></i>
       <MyRoutes
+        initBlogList={initBlogList}
         listBlogContent={listBlogContent}
         handleAddStarPost={handleAddStarPost}
         blogStartList={blogStartList}

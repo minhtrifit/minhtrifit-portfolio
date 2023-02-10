@@ -3,10 +3,14 @@ import Banner from "../Home/Banner/Banner";
 import NewPost from "../Home/New Post/NewPost";
 import Blog from "../Blog/Blog";
 import Contact from "../Contact/Contact";
+import DetailBlog from "../DetailBlog/DetailBlog";
+import StarPost from "../Home/Star Post/StarPost";
+import Footer from "../Footer/Footer";
 import "./MyRoutes.scss";
 
 const MyRoutes = (props) => {
   const {
+    initBlogList,
     listBlogContent,
     handleAddStarPost,
     blogStartList,
@@ -14,6 +18,7 @@ const MyRoutes = (props) => {
     newPostPag,
     handleChangeNewPostPage,
   } = props;
+
   return (
     <Routes>
       <Route
@@ -29,6 +34,12 @@ const MyRoutes = (props) => {
               newPostPag={newPostPag}
               handleChangeNewPostPage={handleChangeNewPostPage}
             />
+            <StarPost
+              initBlogList={initBlogList}
+              handleAddStarPost={handleAddStarPost}
+              blogStartList={blogStartList}
+            />
+            <Footer />
           </div>
         }
       />
@@ -36,7 +47,11 @@ const MyRoutes = (props) => {
         path="/blog"
         element={
           <div className="content">
-            <Blog />
+            <Blog
+              initBlogList={initBlogList}
+              blogStartList={blogStartList}
+              handleAddStarPost={handleAddStarPost}
+            />
           </div>
         }
       />
@@ -45,6 +60,14 @@ const MyRoutes = (props) => {
         element={
           <div className="content">
             <Contact />
+          </div>
+        }
+      />
+      <Route
+        path="/blog/:id"
+        element={
+          <div className="content">
+            <DetailBlog initBlogList={initBlogList} />
           </div>
         }
       />
