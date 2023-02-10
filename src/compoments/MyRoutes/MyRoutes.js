@@ -5,7 +5,8 @@ import Blog from "../Blog/Blog";
 import Contact from "../Contact/Contact";
 import "./MyRoutes.scss";
 
-const MyRoutes = () => {
+const MyRoutes = (props) => {
+  const { listBlogContent, handleAddStarPost } = props;
   return (
     <Routes>
       <Route
@@ -13,7 +14,10 @@ const MyRoutes = () => {
         element={
           <div className="content">
             <Banner />
-            <NewPost />
+            <NewPost
+              listBlogContent={listBlogContent}
+              handleAddStarPost={handleAddStarPost}
+            />
           </div>
         }
       />

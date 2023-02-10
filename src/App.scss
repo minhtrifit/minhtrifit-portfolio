@@ -4,6 +4,7 @@
   --gray: #CFCFCF;
   --blue: #BBE1FA;
   --blue-dark: #3282B8;
+  --yellow: #F2CD5C;
 }
 
 .app {
@@ -35,7 +36,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .nav-menu-icon {
     transform: translateX(0);
     display: block;

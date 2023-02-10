@@ -19,7 +19,7 @@ const MyCarousel = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 8000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -34,10 +34,10 @@ const MyCarousel = () => {
           <img src="../../img/banner1.png" alt="banner1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="../../img/banner1.png" alt="banner1" />
+          <img src="../../img/banner2.png" alt="banner2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="../../img/banner1.png" alt="banner1" />
+          <img src="../../img/banner3.png" alt="banner3" />
         </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
