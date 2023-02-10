@@ -1,6 +1,14 @@
 {
-    "count": 1,
+    "count": 9,
     "list": [
-        "../Blog Content/testBlog.json"
+        "../Blog Content/testBlog.json",
+        "../Blog Content/testBlog2.json",
+        "../Blog Content/testBlog3.json",
+        "../Blog Content/testBlog4.json",
+        "../Blog Content/testBlog5.json",
+        "../Blog Content/testBlog6.json",
+        "../Blog Content/testBlog7.json",
+        "../Blog Content/testBlog8.json",
+        "../Blog Content/testBlog9.json"
     ]
 }

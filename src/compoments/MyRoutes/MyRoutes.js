@@ -6,7 +6,14 @@ import Contact from "../Contact/Contact";
 import "./MyRoutes.scss";
 
 const MyRoutes = (props) => {
-  const { listBlogContent, handleAddStarPost } = props;
+  const {
+    listBlogContent,
+    handleAddStarPost,
+    blogStartList,
+    newPostPagCount,
+    newPostPag,
+    handleChangeNewPostPage,
+  } = props;
   return (
     <Routes>
       <Route
@@ -17,6 +24,10 @@ const MyRoutes = (props) => {
             <NewPost
               listBlogContent={listBlogContent}
               handleAddStarPost={handleAddStarPost}
+              blogStartList={blogStartList}
+              newPostPagCount={newPostPagCount}
+              newPostPag={newPostPag}
+              handleChangeNewPostPage={handleChangeNewPostPage}
             />
           </div>
         }

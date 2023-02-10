@@ -4,6 +4,8 @@
     margin: 50px auto;
     background-color: var(--white);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
     a {
@@ -85,6 +87,10 @@
                     transition: all 0.1s linear;
                 }
 
+                & .active {
+                    color: var(--yellow);
+                }
+
                 .card-star:hover {
                     color: var(--yellow);
                 }
@@ -94,6 +100,32 @@
         .post-card:hover {
             cursor: pointer;
             transform: translateY(3px);
+        }
+    }
+
+    .pagination {
+        margin: 10px auto;
+        display: inline-block;
+
+        p {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+        p:hover {
+            cursor: pointer;
+        }
+
+        p.active {
+            background-color: var(--blue-dark);
+            color: white;
+        }
+
+        p:hover:not(.active) {
+            background-color: var(--gray);
         }
     }
 }
