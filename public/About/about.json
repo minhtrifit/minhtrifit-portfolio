@@ -7,12 +7,14 @@
 		{
 			"name": "Driving Licence Exam",
 			"github": "https://github.com/minhtrifit/driving-license-nodejs",
-			"description": "Simulate the driver's license test in Vietnam"
+			"description": "Simulate the driver's license test in Vietnam",
+			"image": "1.png"
 		},
 		{
 			"name": "Personal Portfolio",
 			"github": "https://github.com/minhtrifit/minhtrifit-portfolio",
-			"description": "Portfolio page to introduce yourself"
+			"description": "Portfolio page to introduce yourself",
+			"image": "2.png"
 		}
 	]
 }

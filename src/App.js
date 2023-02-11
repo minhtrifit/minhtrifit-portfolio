@@ -7,8 +7,8 @@ import Nav from "./compoments/Nav/Nav";
 import MyRoutes from "./compoments/MyRoutes/MyRoutes";
 
 function App() {
-  // URL blog management
-  const blogManagementLink = "./blog content/blogManagement.json";
+  const blogManagementLink = "./blog content/blogManagement.json"; // URL blog management
+  const aboutManagementLink = "./About/About.json"; // URL about management
 
   // Blog type state
   const [initBlogList, setInitBlogList] = useState([]); // set 1 times when loading page
@@ -17,6 +17,7 @@ function App() {
   const [blogCategory, setBlogCategory] = useState([]);
   const [blogCategoryList, setBlogCategoryList] = useState();
   const [selectedOption, setSelectedOption] = useState("Choose category");
+  const [about, setAbout] = useState({});
 
   // Pagination state
   const [newPostPagCount, setNewPostPagCount] = useState(0);
@@ -31,7 +32,7 @@ function App() {
     setNavOpen(!navOpen);
   };
 
-  // Call API && set new post list
+  // Call API when init page
   useEffect(() => {
     const getBlogManagement = async () => {
       try {
@@ -84,6 +85,11 @@ function App() {
 
         tempListContent2 = unique(tempListContent2);
         setBlogCategoryList(tempListContent2);
+
+        //================================= About infomation
+        const res1 = await axios.get(aboutManagementLink);
+        const data1 = res1.data;
+        setAbout(data1);
       } catch (error) {
         console.error(error);
       }
@@ -166,6 +172,7 @@ function App() {
         blogCategoryList={blogCategoryList}
         blogCategory={blogCategory}
         selectedOption={selectedOption}
+        about={about}
       />
     </div>
   );

@@ -22,6 +22,7 @@ const MyRoutes = (props) => {
     blogCategoryList,
     blogCategory,
     selectedOption,
+    about,
   } = props;
 
   return (
@@ -67,7 +68,7 @@ const MyRoutes = (props) => {
         path="/about"
         element={
           <div className="content">
-            <About />
+            <About about={about} />
           </div>
         }
       />
