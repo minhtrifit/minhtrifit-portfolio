@@ -110,15 +110,22 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
     .star-blog-container {
         .star-list-warning {
+            font-size: 18px;
             text-align: center;
         }
 
         .title {
+            .title-icon {
+                font-size: 15px;
+                // background-color: red;
+            }
             .title-text {
-                text-align: center;
+                font-size: 15px;
+                text-align: start;
+                // background-color: red;
             }
         }
     }   

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Nav.scss";
 
 const Nav = (props) => {
@@ -10,9 +10,9 @@ const Nav = (props) => {
   return (
     <div className={`nav ${navOpen ? "nav-open" : null}`}>
       <div className="nav-top">
-        <div className="nav-avatar">
+        <Link className="nav-avatar" to="/about">
           <img src="../../img/avatar.png" alt="avatar" />
-        </div>
+        </Link>
         <div className="nav-links">
           <a href="https://www.facebook.com/minhtrifit" target="blank">
             <i className="fa-brands fa-facebook nav-links-icon"></i>
@@ -45,6 +45,10 @@ const Nav = (props) => {
         <NavLink className={navLinkClass} to="/blog">
           <i className="fa-solid fa-book nav-icon"></i>
           <p className="nav-text">Blog</p>
+        </NavLink>
+        <NavLink className={navLinkClass} to="/about">
+          <i className="fa-solid fa-user nav-icon"></i>
+          <p className="nav-text">About</p>
         </NavLink>
         <NavLink className={navLinkClass} to="/contact">
           <i className="fa-solid fa-message nav-icon"></i>

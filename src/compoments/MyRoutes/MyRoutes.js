@@ -6,6 +6,7 @@ import Contact from "../Contact/Contact";
 import DetailBlog from "../DetailBlog/DetailBlog";
 import StarPost from "../Home/Star Post/StarPost";
 import Footer from "../Footer/Footer";
+import About from "../About/About";
 import "./MyRoutes.scss";
 
 const MyRoutes = (props) => {
@@ -17,6 +18,10 @@ const MyRoutes = (props) => {
     newPostPagCount,
     newPostPag,
     handleChangeNewPostPage,
+    handleSetBlogCategory,
+    blogCategoryList,
+    blogCategory,
+    selectedOption,
   } = props;
 
   return (
@@ -48,10 +53,21 @@ const MyRoutes = (props) => {
         element={
           <div className="content">
             <Blog
-              initBlogList={initBlogList}
+              blogCategory={blogCategory}
               blogStartList={blogStartList}
               handleAddStarPost={handleAddStarPost}
+              handleSetBlogCategory={handleSetBlogCategory}
+              blogCategoryList={blogCategoryList}
+              selectedOption={selectedOption}
             />
+          </div>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <div className="content">
+            <About />
           </div>
         }
       />

@@ -1,0 +1,18 @@
+{
+	"name": "Le Minh Tri",
+	"school": "University of Science VNU-HCM",
+	"faculty": "Infomation Technology - Software Engineering",
+	"contact": "https://linktr.ee/minhtri.fit",
+	"project": [
+		{
+			"name": "Driving Licence Exam",
+			"github": "https://github.com/minhtrifit/driving-license-nodejs",
+			"description": "Simulate the driver's license test in Vietnam"
+		},
+		{
+			"name": "Personal Portfolio",
+			"github": "https://github.com/minhtrifit/minhtrifit-portfolio",
+			"description": "Portfolio page to introduce yourself"
+		}
+	]
+}

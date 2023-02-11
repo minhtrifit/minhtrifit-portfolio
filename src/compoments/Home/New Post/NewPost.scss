@@ -130,11 +130,17 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
     .new-post-container {
         .title {
+            .title-icon {
+                font-size: 15px;
+                // background-color: red;
+            }
             .title-text {
-                text-align: center;
+                font-size: 15px;
+                text-align: start;
+                // background-color: red;
             }
         }
     }   

@@ -14,6 +14,9 @@ function App() {
   const [initBlogList, setInitBlogList] = useState([]); // set 1 times when loading page
   const [listBlogContent, setListBlogContent] = useState([]);
   const [blogStartList, setBlogStartList] = useState([]);
+  const [blogCategory, setBlogCategory] = useState([]);
+  const [blogCategoryList, setBlogCategoryList] = useState();
+  const [selectedOption, setSelectedOption] = useState("Choose category");
 
   // Pagination state
   const [newPostPagCount, setNewPostPagCount] = useState(0);
@@ -34,6 +37,7 @@ function App() {
       try {
         const tempListContent = [];
         const tempListContent1 = [];
+        let tempListContent2 = [];
         const res = await axios.get(blogManagementLink);
         const data = await res.data;
         console.log(data);
@@ -44,24 +48,42 @@ function App() {
 
         const listBlogURLReverse = listBlogURL.reverse();
 
-        // Init pagination count for NEW POST
+        //================================= Init pagination count for NEW POST
         const newPostCount = Math.ceil(data.count / 3); // 3 is the number of post per page
         setNewPostPagCount(newPostCount);
 
-        // Source blog list
+        //================================= Source blog list
         for (var i = 0; i < data.count; ++i) {
           const res = await axios.get(listBlogURL[i]);
           tempListContent.push(res.data);
         }
         setInitBlogList(tempListContent);
+        setBlogCategory(tempListContent);
 
-        // New blog list
+        //================================= New blog list
         for (var j = 0; j < newPostCount; ++j) {
           const res = await axios.get(listBlogURLReverse[j]);
           tempListContent1.push(res.data);
         }
 
         setListBlogContent(tempListContent1);
+
+        //================================= Category blog list
+        tempListContent2 = tempListContent.map((item) => {
+          return item.category;
+        });
+
+        // Function remove duplicate category
+        const unique = (arr) => {
+          var newArr = [];
+          newArr = arr.filter(function (item) {
+            return newArr.includes(item) ? "" : newArr.push(item);
+          });
+          return newArr;
+        };
+
+        tempListContent2 = unique(tempListContent2);
+        setBlogCategoryList(tempListContent2);
       } catch (error) {
         console.error(error);
       }
@@ -111,6 +133,20 @@ function App() {
     setListBlogContent(items);
   };
 
+  const handleSetBlogCategory = (e, value) => {
+    let sortCategoryValue = [];
+    if (value !== "Choose category") {
+      sortCategoryValue = initBlogList.filter((item) => {
+        return item.category === value;
+      });
+      setBlogCategory(sortCategoryValue);
+      setSelectedOption(value);
+    } else {
+      setBlogCategory(initBlogList);
+      setSelectedOption("Choose category");
+    }
+  };
+
   return (
     <div className="app">
       <Nav navOpen={navOpen} />
@@ -126,6 +162,10 @@ function App() {
         newPostPagCount={newPostPagCount}
         newPostPag={newPostPag}
         handleChangeNewPostPage={handleChangeNewPostPage}
+        handleSetBlogCategory={handleSetBlogCategory}
+        blogCategoryList={blogCategoryList}
+        blogCategory={blogCategory}
+        selectedOption={selectedOption}
       />
     </div>
   );
