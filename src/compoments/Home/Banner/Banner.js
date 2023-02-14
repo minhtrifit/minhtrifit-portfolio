@@ -3,7 +3,8 @@ import "./Banner.scss";
 import MySearch from "../../Search/Search";
 import MyCarousel from "../../Carousel/Carousel";
 
-const Banner = () => {
+const Banner = (props) => {
+  const { setSearchBar, handleSearchBar } = props;
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Justasatboiz | minhtrifit";
@@ -11,7 +12,7 @@ const Banner = () => {
 
   return (
     <div className="banner-container">
-      <MySearch />
+      <MySearch setSearchBar={setSearchBar} handleSearchBar={handleSearchBar} />
       <MyCarousel />
     </div>
   );

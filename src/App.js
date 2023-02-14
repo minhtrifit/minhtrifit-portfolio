@@ -18,6 +18,8 @@ function App() {
   const [blogCategoryList, setBlogCategoryList] = useState();
   const [selectedOption, setSelectedOption] = useState("Choose category");
   const [about, setAbout] = useState({});
+  const [searchBar, setSearchBar] = useState();
+  const [searchList, setSearchList] = useState([]);
 
   // Pagination state
   const [newPostPagCount, setNewPostPagCount] = useState(0);
@@ -153,6 +155,18 @@ function App() {
     }
   };
 
+  const handleSearchBar = (e) => {
+    const searchListResult = initBlogList.filter((item) => {
+      return (
+        item.title.toUpperCase().includes(searchBar.toUpperCase()) ||
+        item.id === parseInt(searchBar) ||
+        item.category.toUpperCase().includes(searchBar.toUpperCase())
+      );
+    });
+
+    setSearchList(searchListResult);
+  };
+
   return (
     <div className="app">
       <Nav navOpen={navOpen} />
@@ -173,6 +187,10 @@ function App() {
         blogCategory={blogCategory}
         selectedOption={selectedOption}
         about={about}
+        searchBar={searchBar}
+        setSearchBar={setSearchBar}
+        handleSearchBar={handleSearchBar}
+        searchList={searchList}
       />
     </div>
   );

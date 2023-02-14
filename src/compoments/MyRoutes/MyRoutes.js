@@ -7,6 +7,7 @@ import DetailBlog from "../DetailBlog/DetailBlog";
 import StarPost from "../Home/Star Post/StarPost";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
+import SearchResult from "../Search/SearchResult";
 import "./MyRoutes.scss";
 
 const MyRoutes = (props) => {
@@ -23,6 +24,10 @@ const MyRoutes = (props) => {
     blogCategory,
     selectedOption,
     about,
+    searchBar,
+    setSearchBar,
+    handleSearchBar,
+    searchList,
   } = props;
 
   return (
@@ -31,7 +36,10 @@ const MyRoutes = (props) => {
         path="/"
         element={
           <div className="content">
-            <Banner />
+            <Banner
+              setSearchBar={setSearchBar}
+              handleSearchBar={handleSearchBar}
+            />
             <NewPost
               listBlogContent={listBlogContent}
               handleAddStarPost={handleAddStarPost}
@@ -85,6 +93,19 @@ const MyRoutes = (props) => {
         element={
           <div className="content">
             <DetailBlog initBlogList={initBlogList} />
+          </div>
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <div className="content">
+            <SearchResult
+              searchBar={searchBar}
+              searchList={searchList}
+              blogStartList={blogStartList}
+              handleAddStarPost={handleAddStarPost}
+            />
           </div>
         }
       />
