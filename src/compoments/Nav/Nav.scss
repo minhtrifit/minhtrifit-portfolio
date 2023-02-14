@@ -3,11 +3,11 @@
     top: 50px;
     left: 50px;
     width: 350px;
-    height: 90vh;
+    height: 780px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     border-radius: 5px;
     background-color: var(--white);
     transition: linear 0.3s;
@@ -23,12 +23,14 @@
         height: 30%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        margin: 30px 0px;
         // background-color: red;
 
         .nav-avatar {
-            width: 160px;
-            height: 170px;
+            width: 140px;
+            height: 150px;
             border-radius: 100%;
             display: flex;
             justify-content: center;
@@ -67,35 +69,37 @@
 
     .nav-middle {
         width: 100%;
-        height: 50%;
+        height: 40%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 50px 0px;
         // background-color: red;
 
         .nav-box {
             width: 90%;
-            height: 80px;
-            line-height: 80px;
+            height: 70px;
+            line-height: 70px;
             font-weight: 700;
             display: flex;
             margin: 3px 0px;
             border-radius: 10px;
             transition: all linear 0.25s;
+            // background-color: red;
 
             .nav-icon {
                 width: 80px;
-                height: 80px;
+                height: 70px;
                 font-size: 25px;
                 text-align: center;
-                line-height: 80px;
+                line-height: 70px;
             }
 
             .nav-text {
                 min-width: 100px;
-                height: 80px;
-                line-height: 80px;
+                height: 70px;
+                line-height: 70px;
                 font-size: 25px;
                 text-align: start;
             }
