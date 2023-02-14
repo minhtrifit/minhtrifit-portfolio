@@ -50,10 +50,10 @@ const Nav = (props) => {
           <i className="fa-solid fa-user nav-icon"></i>
           <p className="nav-text">About</p>
         </NavLink>
-        <NavLink className={navLinkClass} to="/contact">
+        {/* <NavLink className={navLinkClass} to="/contact">
           <i className="fa-solid fa-message nav-icon"></i>
           <p className="nav-text">Contact</p>
-        </NavLink>
+        </NavLink> */}
       </div>
     </div>
   );
