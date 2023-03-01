@@ -39,7 +39,8 @@
         align-self: self-end;
         margin-right: 50px;
         margin-top: 10px;
-        width: 400px;
+        width: 40%;
+        // background-color: red;
     }
 
     .post-content {
@@ -107,4 +108,18 @@
             transform: translateY(3px);
         }
     }
+}
+
+@media only screen and (max-width: 1024px) {
+    .blog-container {
+        .blog-description {
+            width: 90%;
+            text-align: justify;
+            font-size: 15px;
+        }
+
+        .blog-select {
+            width: 70%;
+        }
+    }  
 }
